@@ -1,3 +1,4 @@
+import 'package:basic/rolldice.dart';
 import 'package:flutter/material.dart';
 import 'package:basic/styledtext.dart';
 var start=Alignment.topLeft;
@@ -34,9 +35,7 @@ var end=Alignment.topRight;
    const GradientContainer(this.color1,this.color2,{super.key});
    final Color color1;
    final Color color2;
-   void rolldice(){
-     //...
- }
+
 
 @override
 Widget build(context){
@@ -48,15 +47,8 @@ begin:start,
 end:end,
 ),
 ) ,
-child: Center(
-child:Column(mainAxisSize: MainAxisSize.min,//to make the dice in the middle
-  children:[
-Image.asset('assets/images/dice-2.png',width:100,),
-// const SizedBox(height:20),//to get space between dice and rolldice button
-TextButton(onPressed:rolldice,
-    style: TextButton.styleFrom(padding:const EdgeInsets.only(top:30,),foregroundColor: Colors.white,textStyle: const TextStyle(fontSize: 28)),
-    child: const Text('Roll dice'))],
-),
+child: const Center(
+child: DiceRoller()
 ),
 );
 }
